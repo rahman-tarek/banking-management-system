@@ -15,6 +15,7 @@ int login(struct Account *acc);
 void accountInfo(struct Account acc);
 void userMenu(struct Account acc);
 void transferMoney(struct Account *acc);
+void dipositMoney(struct Account *acc);
 
 int main(){
     int choice;
@@ -140,9 +141,10 @@ void userMenu(struct Account acc){
         printf("\n--- User Menu ---\n");
         printf("1. View Profile\n");
         printf("2. Transfer Money\n");
-        printf("3. Update Name\n");
-        printf("4. Update Password\n");
-        printf("5. Logout\n");
+        printf("3. Diposit Money\n");
+        printf("4. Update Name\n");
+        printf("5. Update Password\n");
+        printf("6. Logout\n");
         printf("Enter choice: ");
         scanf("%d", &choice);
 
@@ -154,14 +156,17 @@ void userMenu(struct Account acc){
                 transferMoney(&acc);
                 break;
             case 3:
+                dipositMoney(&acc);
+                break;
+            case 4:
                 // updateName(&acc);
                 printf("Update Name functionality not implemented yet.\n");
                 break;
-            case 4:
+            case 5:
                 // updatePassword(&acc);
                 printf("Update Password functionality not implemented yet.\n");
                 break;
-            case 5:
+            case 6:
                 printf("Logging out...\n");
                 return;
             default:
@@ -178,6 +183,11 @@ void accountInfo(struct Account acc){
     printf("Account Number: %lld\n", acc.account_number);
     printf("Name: %s\n", acc.name);
     printf("Balance: %.2f\n", acc.balance);
+}
+
+// Function to deposit money
+void dipositMoney(struct Account *acc){
+    // Deposit money into account and update balance
 }
 // Function to update profile info
 // void updateProfile(struct Account *acc){
