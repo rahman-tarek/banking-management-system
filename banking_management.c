@@ -182,7 +182,7 @@ void accountInfo(struct Account acc){
     printf("\n--- Account Information ---\n");
     printf("Account Number: %lld\n", acc.account_number);
     printf("Name: %s\n", acc.name);
-    printf("Balance: %.2f\n", acc.balance);
+    printf("Balance: %.2f $USD \n", acc.balance);
 }
 
 // Function to deposit money
