@@ -7,7 +7,7 @@ struct Account {
     long long account_number;
     float balance;
     char password[20];
-};
+} Account;
 
 void createAccount();
 int accountExists(long long account_number);
