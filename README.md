@@ -10,7 +10,7 @@ Banking management system using C. It's a toy project for learning C deeply and 
 - Login
 - User Menu
 - User Profile
-- Diposit Money
+- Deposit Money
 - Transfer Money
 - Logout
 - Exit
