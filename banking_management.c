@@ -1,13 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "include/models.h"
 
-struct Account {
-    char name[50];
-    long long account_number;
-    float balance;
-    char password[20];
-} Account;
+
 
 void createAccount();
 int accountExists(long long account_number);

@@ -11,10 +11,10 @@ typedef struct Account
     char password[20];
 } Account;
 
-void createAccount();
+void createAccount(Account *acc);
 int accountExists(long long account_number);
-void accountInfo(struct Account acc);
-void transferMoney(struct Account *acc);
-void dipositMoney(struct Account *acc);
+void accountInfo(Account *acc);
+void transferMoney(Account *acc);
+void dipositMoney(Account *acc);
 
 #endif // ACCOUNT_H
