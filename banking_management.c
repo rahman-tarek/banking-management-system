@@ -2,16 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include "include/models.h"
+#include "include/account.h"
 
 
 
-void createAccount();
-int accountExists(long long account_number);
-int login(struct Account *acc);
-void accountInfo(struct Account acc);
-void userMenu(struct Account acc);
-void transferMoney(struct Account *acc);
-void dipositMoney(struct Account *acc);
+// void createAccount();
+// int accountExists(long long account_number);
+// int login(struct Account *acc);
+// void accountInfo(struct Account acc);
+// void userMenu(struct Account acc);
+// void transferMoney(struct Account *acc);
+// void dipositMoney(struct Account *acc);
 
 int main(){
     int choice;
@@ -46,57 +47,58 @@ int main(){
     return 0;
 }
 // Function to check if an account number already exists
-int accountExists(long long account_number){
-    struct Account acc;
-    FILE *fp = fopen("accounts.dat", "rb");
+// int accountExists(long long account_number){
+//     struct Account acc;
+//     FILE *fp = fopen("data/accounts.dat", "rb");
 
-    if(fp == NULL){
-        return 0;
-    }
+//     if(fp == NULL){
+//         printf("Error opening file from account exist checking!\n");
+//         return 0;
+//     }
 
-    while(fread(&acc, sizeof(acc), 1, fp)){
-        if(acc.account_number == account_number){
-            fclose(fp);
-            return 1;
-        }
-    }
-    fclose(fp);
-    return 0;
-}
+//     while(fread(&acc, sizeof(acc), 1, fp)){
+//         if(acc.account_number == account_number){
+//             fclose(fp);
+//             return 1;
+//         }
+//     }
+//     fclose(fp);
+//     return 0;
+// }
 
 // Create a new account
-void createAccount(){
-    struct Account acc;
-    FILE *fp;
+// void createAccount(){
+//     struct Account acc;
+//     FILE *fp;
 
-    printf("\n--- Create New Account ---\n");
-    printf("Enter Account Number: ");
-    scanf("%lld", &acc.account_number);
+//     printf("\n--- Create New Account ---\n");
+//     printf("Enter Account Number: ");
+//     scanf("%lld", &acc.account_number);
 
-    // Check for unique account number
-    if(accountExists(acc.account_number)){
-        printf("Account number already exists. Please try again.\n");
-        return;
-    }
-    printf("Enter Name: ");
-    getchar(); // Clear newline character from buffer
-    fgets(acc.name, sizeof(acc.name), stdin);
-    acc.name[strcspn(acc.name, "\n")] = 0; // Remove newline character
+//     // Check for unique account number
+//     if(accountExists(acc.account_number)){
+//         printf("Account number already exists. Please try again.\n");
+//         return;
+//     }
+//     printf("Enter Name: ");
+//     getchar(); // Clear newline character from buffer
+//     fgets(acc.name, sizeof(acc.name), stdin);
+//     acc.name[strcspn(acc.name, "\n")] = 0; // Remove newline character
 
-    printf("Enter Password: ");
-    scanf("%s", acc.password);
+//     printf("Enter Password: ");
+//     scanf("%s", acc.password);
 
-    acc.balance = 0.0;
-    fp = fopen("accounts.dat", "ab");
-    if(fp == NULL){
-        printf("Error opening file!\n");
-        return;
-    }
-    fwrite(&acc, sizeof(acc), 1, fp);
-    fclose(fp);
-    printf("Account created successfully!\n");
+//     acc.balance = 0.0;
+//     fp = fopen("accounts.dat", "ab");
+//     if(fp == NULL){
+//         printf("Error opening file!\n");
+//         return;
+//     }
+//     fwrite(&acc, sizeof(acc), 1, fp);
+//     fclose(fp);
+//     printf("Account created successfully!\n");
     
-}
+// }
 
 // Login to an existing account
 int login(struct Account *acc){
@@ -111,9 +113,9 @@ int login(struct Account *acc){
     printf("Enter Password: ");
     scanf("%s", password);
 
-    fp = fopen("accounts.dat", "rb");
+    fp = fopen("data/accounts.dat", "rb");
     if(fp == NULL){
-        printf("Error opening file!\n");
+        printf("Error opening file from login!\n");
         return 0;
     }
     

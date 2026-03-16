@@ -2,7 +2,8 @@
 #define AUTH_H
 
 #include "account.h"
+#include "models.h"
 
-int auth_login(Account *acc);
+int login(Account *acc);
 
 #endif // AUTH_H
