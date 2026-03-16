@@ -2,19 +2,13 @@
 #define ACCOUNT_H
 
 #define ACCOUNT_FILE "accounts.dat"
+#include "models.h"
 
-typedef struct Account
-{
-    char name[50];
-    long long account_number;
-    float balance;
-    char password[20];
-} Account;
-
-void createAccount(Account *acc);
+void createAccount();
 int accountExists(long long account_number);
 void accountInfo(Account *acc);
 void transferMoney(Account *acc);
 void dipositMoney(Account *acc);
+void userMenu(Account *acc);
 
 #endif // ACCOUNT_H
