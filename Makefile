@@ -7,6 +7,7 @@ SRC = src/account.c \
 	  src/auth.c \
 	  src/createAccount.c \
 	  src/dipositMoney.c \
+	  src/login.c \
 	  src/main.c \
 	  src/transaction.c \
 	  src/transferMoney.c \
