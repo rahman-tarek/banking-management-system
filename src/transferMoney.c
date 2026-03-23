@@ -10,11 +10,11 @@ void transferMoney(Account *acc){
     // Update balances in which account to be transferred
 
     FILE *fp;
-    double amount;
-    long long int targetAcc;
+    float amount;
+    long long targetAcc;
     printf("\n--- Transfer Money ---\n");
     printf("Enter amount to transfer: ");
-    scanf("%lf", &amount);
+    scanf("%f", &amount);
     printf("Enter account number: ");
     scanf("%lld", &targetAcc);
     if(amount <= 0){
@@ -35,6 +35,7 @@ void transferMoney(Account *acc){
     int found = 0;
     Account temp;
     while(fread(&temp, sizeof(temp), 1, fp)){
+        printf("%lld %lld\n", temp.account_number, targetAcc);
         if(temp.account_number == targetAcc){ // If targeted account found
             temp.balance += amount; // Update balance into temporary struct
             fseek(fp, -sizeof(temp), SEEK_CUR);
