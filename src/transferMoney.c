@@ -3,6 +3,7 @@
 #include <string.h>
 #include "../include/account.h"
 #include "../include/models.h"
+#include "../include/config.h"
 
 
 void transferMoney(Account *acc){
@@ -26,7 +27,7 @@ void transferMoney(Account *acc){
         return;
     };
 
-    fp = fopen("accounts.dat", "rb+");
+    fp = fopen(FILE_PATH, "rb+");
     if(fp == NULL){
         printf("Error opening file!\n");
         return;

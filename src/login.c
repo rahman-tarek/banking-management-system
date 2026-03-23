@@ -4,6 +4,7 @@
 #include "../include/account.h"
 #include "../include/models.h"
 #include "../include/auth.h"
+#include "../include/config.h"
 
 // Login to an existing account
 int login(Account *acc){
@@ -18,7 +19,7 @@ int login(Account *acc){
     printf("Enter Password: ");
     scanf("%s", password);
 
-    fp = fopen("data/accounts.dat", "rb");
+    fp = fopen(FILE_PATH, "rb");
     if(fp == NULL){
         printf("Error opening file from login!\n");
         return 0;
