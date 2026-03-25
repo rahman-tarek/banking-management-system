@@ -2,12 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../include/account.h"
+#include "../include/config.h"
 
 
 // Function to check if an account number already exists
 int accountExists(long long account_number){
     Account acc;
-    FILE *fp = fopen("data/accounts.dat", "rb");
+    FILE *fp = fopen(FILE_PATH, "rb");
 
     if(fp == NULL){
         printf("Error opening file from account exist checking!\n");

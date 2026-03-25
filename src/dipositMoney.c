@@ -3,6 +3,7 @@
 #include <string.h>
 #include "../include/account.h"
 #include "../include/models.h"
+#include "../include/config.h"
 
 
 // Function to deposit money
@@ -19,7 +20,7 @@ void dipositMoney(Account *acc){
     }
     acc -> balance += amount;
     // Update the account in the file
-    fp = fopen("accounts.dat", "rb+");
+    fp = fopen(FILE_PATH, "rb+");
     if(fp == NULL){
         printf("Error opening file!\n");
         return;

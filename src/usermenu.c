@@ -3,6 +3,7 @@
 #include <string.h>
 #include "../include/account.h"
 #include "../include/models.h"
+#include "../include/update.h"
 
 // Function to display user menu after login
 void userMenu(Account *acc){
@@ -34,8 +35,7 @@ void userMenu(Account *acc){
                 printf("Update Name functionality not implemented yet.\n");
                 break;
             case 5:
-                // updatePassword(&acc);
-                printf("Update Password functionality not implemented yet.\n");
+                changePassword(acc);
                 break;
             case 6:
                 printf("Logging out...\n");

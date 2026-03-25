@@ -3,6 +3,7 @@
 #include <string.h>
 #include "../include/account.h"
 #include "../include/models.h"
+#include "../include/config.h"
 
 
 
@@ -29,7 +30,7 @@ void createAccount(){
     scanf("%s", acc.password);
 
     acc.balance = 0.0;
-    fp = fopen("accounts.dat", "ab");
+    fp = fopen(FILE_PATH, "ab");
     if(fp == NULL){
         printf("Error opening file!\n");
         return;

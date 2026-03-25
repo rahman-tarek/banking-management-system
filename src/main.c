@@ -4,6 +4,7 @@
 #include "models.h"
 #include "account.h"
 #include "auth.h"
+#include "config.h"
 
 int main(){
     int choice;
