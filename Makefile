@@ -5,6 +5,7 @@ SRC = src/account.c \
 	  src/accountExist.c \
 	  src/accountInfo.c \
 	  src/auth.c \
+	  src/changePass.c \
 	  src/createAccount.c \
 	  src/dipositMoney.c \
 	  src/login.c \
