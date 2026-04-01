@@ -5,6 +5,7 @@ SRC = src/account.c \
 	  src/accountExist.c \
 	  src/accountInfo.c \
 	  src/auth.c \
+	  src/changeName.c \
 	  src/changePass.c \
 	  src/createAccount.c \
 	  src/dipositMoney.c \
@@ -12,7 +13,7 @@ SRC = src/account.c \
 	  src/main.c \
 	  src/transaction.c \
 	  src/transferMoney.c \
-	  src/usermenu.c 
+	  src/usermenu.c \
 
 TARGET = bank
 

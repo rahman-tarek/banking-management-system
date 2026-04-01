@@ -31,8 +31,7 @@ void userMenu(Account *acc){
                 dipositMoney(acc);
                 break;
             case 4:
-                // updateName(&acc);
-                printf("Update Name functionality not implemented yet.\n");
+                changeName(acc);
                 break;
             case 5:
                 changePassword(acc);
