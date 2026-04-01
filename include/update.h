@@ -4,5 +4,6 @@
 #include "models.h"
 
 void changePassword(Account *acc);
+void changeName(Account *acc);
 
 #endif
