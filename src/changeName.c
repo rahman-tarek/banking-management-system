@@ -12,8 +12,8 @@ void changeName(Account *acc)
     FILE *fp;
     char newName[50];
     printf("Enter your new name: ");
-    scanf("%s", newName);
-
+    fgets(newName, sizeof(newName), stdin);
+    newName[strcspn(newName, "\n")] = '\0'; // Remove the newline character from the end of the string
     Account temp;
 
     fp = fopen(FILE_PATH, "rb+");
@@ -34,6 +34,7 @@ void changeName(Account *acc)
             fseek(fp, -(long)sizeof(temp), SEEK_CUR); // Move the pointer back to the position of the account
             // Write the update account back to the file
             fwrite(&temp, sizeof(temp), 1, fp) ;
+            printf("Name update successfully!\n");
             fclose(fp);
             return;
        }

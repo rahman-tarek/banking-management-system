@@ -36,10 +36,9 @@ void transferMoney(Account *acc){
     int found = 0;
     Account temp;
     while(fread(&temp, sizeof(temp), 1, fp)){
-        printf("%lld %lld\n", temp.account_number, targetAcc);
         if(temp.account_number == targetAcc){ // If targeted account found
             temp.balance += amount; // Update balance into temporary struct
-            fseek(fp, -sizeof(temp), SEEK_CUR);
+            fseek(fp, -(long)sizeof(temp), SEEK_CUR);
             fwrite(&temp, sizeof(temp), 1, fp); // And then update the main file according to temproray struct
             found = 1;
             break;
@@ -57,7 +56,7 @@ void transferMoney(Account *acc){
     while(fread(&temp, sizeof(temp), 1, fp)){
         if(temp.account_number == acc -> account_number){ // If sender's account found
             temp.balance -= amount; // Deduct the amount
-            fseek(fp, -sizeof(temp), SEEK_CUR); // Move file pointer back
+            fseek(fp, -(long)sizeof(temp), SEEK_CUR); // Move file pointer back
             fwrite(&temp, sizeof(temp), 1, fp); // Update the file
             acc -> balance = temp.balance; // Update the balance in the current session
             printf("Transfer successful! New balance: %.2f $USD\n", acc -> balance);

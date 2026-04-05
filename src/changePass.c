@@ -44,7 +44,6 @@ void changePassword(Account *acc)
             fwrite(&temp, sizeof(temp), 1, fp);
             printf("Password updated successfully!\n");
             fclose(fp);
-            exit(0);
             return;
         }
     }

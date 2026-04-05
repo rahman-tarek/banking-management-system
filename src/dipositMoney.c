@@ -23,6 +23,7 @@ void dipositMoney(Account *acc){
     fp = fopen(FILE_PATH, "rb+");
     if(fp == NULL){
         printf("Error opening file!\n");
+        fclose(fp);
         return;
     }
     Account temp;
