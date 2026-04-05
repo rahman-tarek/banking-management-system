@@ -34,6 +34,7 @@ void changeName(Account *acc)
             fseek(fp, -(long)sizeof(temp), SEEK_CUR); // Move the pointer back to the position of the account
             // Write the update account back to the file
             fwrite(&temp, sizeof(temp), 1, fp) ;
+            printf("Name update successfully!\n");
             fclose(fp);
             return;
        }
