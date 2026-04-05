@@ -36,7 +36,6 @@ void transferMoney(Account *acc){
     int found = 0;
     Account temp;
     while(fread(&temp, sizeof(temp), 1, fp)){
-        printf("%lld %lld\n", temp.account_number, targetAcc);
         if(temp.account_number == targetAcc){ // If targeted account found
             temp.balance += amount; // Update balance into temporary struct
             fseek(fp, -sizeof(temp), SEEK_CUR);
